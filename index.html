@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arca Academy Changelog - 20260528-171110-d7e16eb</title>
+  <style>
+    :root {
+      --ink:#17212b; --muted:#607080; --line:#d9e1e8; --paper:#f8fafc; --panel:#ffffff;
+      --blue:#235789; --green:#287a59; --amber:#8a5a16; --red:#9b3b35;
+      --soft-blue:#eef6ff; --soft-green:#ecf8f1; --soft-amber:#fff6e8; --soft-red:#fff1ef;
+    }
+    *{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    header{padding:40px 28px 28px;background:#edf3f7;border-bottom:1px solid var(--line)} main{padding:28px}.wrap{max-width:1160px;margin:0 auto}
+    h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:0} h2{margin:34px 0 14px;font-size:24px;letter-spacing:0} h3{margin:0 0 8px;font-size:18px;letter-spacing:0}
+    p{margin:0 0 12px} ul{margin:8px 0 0 20px;padding:0} li{margin:4px 0} code{padding:1px 4px;border-radius:4px;background:#edf2f7;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}
+    .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:18px}.meta div,.notice,.card,.week{background:var(--panel);border:1px solid var(--line);border-radius:8px}.meta div{padding:11px 12px;color:var(--muted)}.meta strong{color:var(--ink)}
+    .notice{padding:16px 18px;margin-bottom:22px}.notice strong{color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card{padding:16px}.stat{display:block;margin-bottom:4px;font-size:28px;line-height:1;font-weight:800;color:var(--blue)}
+    .pill{display:inline-block;margin:0 6px 8px 0;padding:3px 8px;border-radius:999px;background:#e7eef5;color:#25445f;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.pill.draft{background:#e9f7ef;color:#236244}.pill.move{background:#fff0d8;color:#73480c}.pill.remove{background:#ffe7e4;color:#8a2f2a}
+    .week{margin:22px 0;overflow:hidden}.week>h2{margin:0;padding:18px 20px;background:#f3f7fa;border-bottom:1px solid var(--line)}.week-body{padding:18px 20px 22px}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0 16px}.before,.after,.impact{border:1px solid var(--line);border-radius:8px;padding:14px}.before{background:var(--soft-amber)}.after{background:var(--soft-green)}.impact{background:var(--soft-blue);margin-top:12px}.danger{background:var(--soft-red)}
+    .label{display:block;margin-bottom:6px;color:var(--muted);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+    table{width:100%;margin-top:12px;border-collapse:collapse;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)} th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top} th{background:#f5f8fb;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em} tr:last-child td{border-bottom:0}.minor{color:var(--muted);font-size:13px}
+    @media(max-width:760px){header,main{padding-left:18px;padding-right:18px}.compare{grid-template-columns:1fr}th,td{display:block;width:100%}th{border-bottom:0}td{border-bottom:1px solid var(--line)}}
+  </style>
+</head>
+<body>
+  <header><div class="wrap">
+    <h1>Arca Academy Changelog</h1>
+    <p>Major lesson changes from the base production tag to the latest publish plus the current unpublished editor draft.</p>
+    <div class="meta">
+      <div><strong>Base tag</strong><br><code>lesson/production/20260528-171110-d7e16eb</code></div>
+      <div><strong>Latest publish tag</strong><br><code>lesson/production/20260529-114758-3c87ee6</code></div>
+      <div><strong>Latest publish SHA</strong><br><code>3c87ee68b565696e857a3dbd368a6de8c8a9ab4b</code></div>
+      <div><strong>Editor draft overlay</strong><br><code>102</code> pending file changes overlaid. Editor <code>mainSha</code> matched latest publish.</div>
+    </div>
+  </div></header>
+
+  <main><div class="wrap">
+    <section class="notice">
+      <p><strong>Method:</strong> pulled the base tag and the latest production tag, copied the latest tag to an "After + Draft" folder, overlaid the editor's <code>pendingChanges</code>, then diffed the base folder against the overlay. Renames were detected when a deleted file and an added file shared the same frontmatter <code>id</code>.</p>
+    </section>
+
+    <section>
+      <h2>Changed File Set</h2>
+      <div class="grid">
+        <article class="card"><span class="stat">84</span><strong>Renamed or moved files</strong><br><span class="minor">Matched by frontmatter ID.</span></article>
+        <article class="card"><span class="stat">60</span><strong>Added files</strong><br><span class="minor">Mostly new folders/metadata plus one new lesson page.</span></article>
+        <article class="card"><span class="stat">38</span><strong>Deleted files</strong><br><span class="minor">Mostly old paths replaced by moved folders.</span></article>
+        <article class="card"><span class="stat">21</span><strong>Edited files</strong><br><span class="minor">Mostly order/title metadata plus the draft lesson placement.</span></article>
+      </div>
+    </section>
+
+    <section class="week">
+      <h2>Week 1: Draft Day 1 Promoted Into the Live Week</h2>
+      <div class="week-body">
+        <span class="pill draft">Draft overlay</span><span class="pill move">Major move</span>
+        <div class="compare">
+          <div class="before"><span class="label">Before</span><p>Re-write Week 1 Day 1 lived under <code>re-write-week1/day-1</code> as draft/rewrite content. Live <code>week-1</code> still used the earlier Day 1 introduction structure.</p></div>
+          <div class="after"><span class="label">After + Draft</span><p>Re-write Day 1 content is now moved into live Week 1 as <code>week-1/day-1-rewrite1</code>, with modules for Important Notice, Setting Up Claude, Creating Your Landing Page, and Day 1 Consolidation.</p></div>
+        </div>
+        <div class="impact"><span class="label">Release note</span><p>Week 1 now gains a new live Day 1 rewrite path while the old Week 1 sections are pushed later in ordering. This is a major promotion of the rewritten Day 1 curriculum out of the rewrite area and into the active Week 1 course tree.</p></div>
+        <table><thead><tr><th>Change</th><th>Before</th><th>After + Draft</th></tr></thead><tbody>
+          <tr><td>Day 1 rewrite promoted</td><td><code>re-write-week1/day-1</code> held setup, landing-page, notice, and consolidation lessons.</td><td>The same lessons now live under <code>week-1/day-1-rewrite1</code>, preserving lesson IDs and adding new module metadata.</td></tr>
+          <tr><td>Week 1 order shifted</td><td><code>week-1</code> order was <code>1</code>; Day 2-5 orders were <code>2</code> through <code>5</code>.</td><td><code>week-1</code> order is now <code>2</code>, with Day 2-5 shifted to <code>3</code> through <code>6</code> so the inserted rewrite day can sit in the sequence.</td></tr>
+          <tr><td>Rewrite staging area cleaned up</td><td>Re-write Week 1 contained Day 1 through Day 5 rewrite folders.</td><td>Day 1 is removed from <code>re-write-week1</code>; remaining rewrite days are renamed to <code>day-2-rewrite1</code> through <code>day-5-rewrite1</code>.</td></tr>
+        </tbody></table>
+      </div>
+    </section>
+
+    <section class="week">
+      <h2>Week 1 Day 2: New Resume Lesson Added</h2>
+      <div class="week-body">
+        <span class="pill draft">New lesson</span>
+        <div class="compare">
+          <div class="before"><span class="label">Before</span><p>Day 2's welcome module did not include the resume/Markdown-file exercise.</p></div>
+          <div class="after"><span class="label">After + Draft</span><p>A new no-video, no-exercise page was added at <code>week-1/day-2-front-end-design/welcome-to-day-2/introduction-to-md-files.md</code>.</p></div>
+        </div>
+        <div class="impact"><span class="label">Release note</span><p>The new lesson teaches students to use a provided <code>.md</code> instructions file as a reusable recipe for upgrading resumes with Claude. It includes a sample messy resume and an ATS resume-upgrade instruction file as attachments, asks students to practice on the sample first, then apply the process to their own resume.</p></div>
+        <table><thead><tr><th>Content area</th><th>What changed</th></tr></thead><tbody>
+          <tr><td>New concept</td><td>Introduces <code>.md</code> files as plain-text instruction recipes students can give to Claude.</td></tr>
+          <tr><td>New activity</td><td>Students practice on a sample resume, compare before/after bullets, then run the same workflow on their real resume.</td></tr>
+          <tr><td>Output expectation</td><td>Students fill placeholders with real numbers, export a Word document, and post their best before/after bullet.</td></tr>
+        </tbody></table>
+      </div>
+    </section>
+
+    <section class="week">
+      <h2>Re-write Week 1: Remaining Days Renamed for Staging</h2>
+      <div class="week-body">
+        <span class="pill move">Major move</span>
+        <p>After Day 1 was promoted into the live Week 1 tree, the remaining rewrite days were moved into explicit rewrite-staging folders:</p>
+        <ul>
+          <li><code>re-write-week1/day-2</code> became <code>re-write-week1/day-2-rewrite1</code></li>
+          <li><code>re-write-week1/day-3</code> became <code>re-write-week1/day-3-rewrite1</code></li>
+          <li><code>re-write-week1/day-4</code> became <code>re-write-week1/day-4-rewrite1</code></li>
+          <li><code>re-write-week1/day-5</code> became <code>re-write-week1/day-5-rewrite1</code></li>
+        </ul>
+        <p class="minor">The lesson IDs were preserved, so this is treated as a folder move rather than new lesson content.</p>
+      </div>
+    </section>
+
+    <section class="week">
+      <h2>Week 3 Rewrite: Nested Content Split Into Day Folders</h2>
+      <div class="week-body">
+        <span class="pill move">Published restructure</span>
+        <div class="compare">
+          <div class="before"><span class="label">Before</span><p>Re-write Week 3 content lived under <code>re-write-week-3/day-1/</code>, with nested folders named <code>day-1</code> through <code>day-5</code>.</p></div>
+          <div class="after"><span class="label">After + Draft</span><p>Week 3 is split into top-level <code>day-1</code> through <code>day-5</code> folders with clearer module groups.</p></div>
+        </div>
+        <div class="impact"><span class="label">Release note</span><p>Week 3 now reads as a true five-day arc: OpenClaw foundations, persistent agent workflows, visual systems, research/data pipelines, and Playwright/AI-agent testing.</p></div>
+      </div>
+    </section>
+
+    <section class="week">
+      <h2>Week 4 Rewrite: Sales/SEO Bundle Split Into a Course Arc</h2>
+      <div class="week-body">
+        <span class="pill move">Published restructure</span>
+        <div class="compare">
+          <div class="before"><span class="label">Before</span><p>Re-write Week 4 content lived under <code>re-write-week-4/day-1/</code>, with nested Day 1-5 folders.</p></div>
+          <div class="after"><span class="label">After + Draft</span><p>Week 4 is split into top-level Day 1-5 folders covering connected AI work, sales, plugins, WordPress/SEO, and security.</p></div>
+        </div>
+        <div class="impact"><span class="label">Release note</span><p>Week 4 now has a cleaner learner journey: cowork and connectors, sales deliverables and compliant outreach, plugin creation, WordPress/SEO implementation, and vibe-coding security.</p></div>
+      </div>
+    </section>
+
+    <section class="week">
+      <h2>Course Ordering Adjustments</h2>
+      <div class="week-body">
+        <span class="pill">Navigation</span>
+        <p>Several course-level <code>order</code> values changed to make room for the Week 1 promotion and the Week 3 rename/order adjustment.</p>
+        <table><thead><tr><th>Course</th><th>Before</th><th>After + Draft</th></tr></thead><tbody>
+          <tr><td>Week 0</td><td>Order <code>0</code></td><td>Order <code>1</code></td></tr>
+          <tr><td>Week 1</td><td>Order <code>1</code></td><td>Order <code>2</code></td></tr>
+          <tr><td>Re-write Week 3</td><td>Title <code>Re-write Week 3</code>, order <code>8</code></td><td>Title <code>Week 3</code>, order <code>4</code></td></tr>
+          <tr><td>Re-write Week 1/2/4 and template</td><td>Earlier staging order values</td><td>Shifted later by one slot.</td></tr>
+        </tbody></table>
+      </div>
+    </section>
+
+    <section class="week">
+      <h2>Minor Changes Omitted</h2>
+      <div class="week-body"><p class="minor">This changelog omits small metadata-only title/order tweaks inside unchanged lesson bodies, transcript JSON path changes that only follow folder moves, and formatting-level changes. The focus is on structural course movement, added or promoted lessons, and meaningful learner-facing changes.</p></div>
+    </section>
+  </div></main>
+</body>
+</html>
