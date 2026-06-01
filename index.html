@@ -3,145 +3,170 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Arca Academy Changelog - 20260528-171110-d7e16eb</title>
+  <title>Arca Academy Changelog - lesson/production/20260528-171110-d7e16eb</title>
   <style>
     :root {
-      --ink:#17212b; --muted:#607080; --line:#d9e1e8; --paper:#f8fafc; --panel:#ffffff;
-      --blue:#235789; --green:#287a59; --amber:#8a5a16; --red:#9b3b35;
-      --soft-blue:#eef6ff; --soft-green:#ecf8f1; --soft-amber:#fff6e8; --soft-red:#fff1ef;
+      color-scheme: light;
+      --ink: #18202a;
+      --muted: #586574;
+      --line: #d8dee6;
+      --paper: #f6f7f9;
+      --panel: #ffffff;
+      --blue: #1f6feb;
+      --green: #1f7a4d;
+      --amber: #a15c07;
+      --red: #a33434;
     }
-    *{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    header{padding:40px 28px 28px;background:#edf3f7;border-bottom:1px solid var(--line)} main{padding:28px}.wrap{max-width:1160px;margin:0 auto}
-    h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:0} h2{margin:34px 0 14px;font-size:24px;letter-spacing:0} h3{margin:0 0 8px;font-size:18px;letter-spacing:0}
-    p{margin:0 0 12px} ul{margin:8px 0 0 20px;padding:0} li{margin:4px 0} code{padding:1px 4px;border-radius:4px;background:#edf2f7;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}
-    .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:18px}.meta div,.notice,.card,.week{background:var(--panel);border:1px solid var(--line);border-radius:8px}.meta div{padding:11px 12px;color:var(--muted)}.meta strong{color:var(--ink)}
-    .notice{padding:16px 18px;margin-bottom:22px}.notice strong{color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card{padding:16px}.stat{display:block;margin-bottom:4px;font-size:28px;line-height:1;font-weight:800;color:var(--blue)}
-    .pill{display:inline-block;margin:0 6px 8px 0;padding:3px 8px;border-radius:999px;background:#e7eef5;color:#25445f;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.pill.draft{background:#e9f7ef;color:#236244}.pill.move{background:#fff0d8;color:#73480c}.pill.remove{background:#ffe7e4;color:#8a2f2a}
-    .week{margin:22px 0;overflow:hidden}.week>h2{margin:0;padding:18px 20px;background:#f3f7fa;border-bottom:1px solid var(--line)}.week-body{padding:18px 20px 22px}
-    .compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0 16px}.before,.after,.impact{border:1px solid var(--line);border-radius:8px;padding:14px}.before{background:var(--soft-amber)}.after{background:var(--soft-green)}.impact{background:var(--soft-blue);margin-top:12px}.danger{background:var(--soft-red)}
-    .label{display:block;margin-bottom:6px;color:var(--muted);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
-    table{width:100%;margin-top:12px;border-collapse:collapse;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)} th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top} th{background:#f5f8fb;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em} tr:last-child td{border-bottom:0}.minor{color:var(--muted);font-size:13px}
-    @media(max-width:760px){header,main{padding-left:18px;padding-right:18px}.compare{grid-template-columns:1fr}th,td{display:block;width:100%}th{border-bottom:0}td{border-bottom:1px solid var(--line)}}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+    header {
+      background: #102033;
+      color: #fff;
+      padding: 44px 24px 34px;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: 12px; font-weight: 700; opacity: .78; }
+    h1 { margin: 10px 0 10px; font-size: clamp(30px, 4vw, 48px); line-height: 1.08; letter-spacing: 0; }
+    .subtitle { max-width: 820px; margin: 0; color: #d8e2ef; font-size: 17px; }
+    main { padding: 28px 24px 56px; }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: -18px auto 28px;
+    }
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 15px 16px;
+      min-height: 92px;
+      box-shadow: 0 4px 16px rgba(16, 32, 51, .06);
+    }
+    .stat strong { display: block; font-size: 28px; line-height: 1; margin-bottom: 8px; }
+    .stat span { color: var(--muted); font-size: 13px; }
+    .context {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .context section, .note {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    h2 { margin: 0 0 12px; font-size: 23px; line-height: 1.2; letter-spacing: 0; }
+    h3 { margin: 0 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .94em; background: #eef1f5; padding: 2px 5px; border-radius: 4px; }
+    .change-list { display: grid; gap: 16px; }
+    .change-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--blue);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 16px rgba(16, 32, 51, .05);
+    }
+    .change-card.is-added { border-left-color: var(--green); }
+    .change-card.is-moved { border-left-color: var(--amber); }
+    .change-card.is-edited { border-left-color: var(--blue); }
+    .change-meta { margin-bottom: 10px; }
+    .change-meta span {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 9px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      background: #f9fafb;
+    }
+    .before-after { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+    .before-after section { border: 1px solid var(--line); border-radius: 8px; padding: 14px; background: #fbfcfe; }
+    p { margin: 0; }
+    ul { margin: 14px 0 0; padding-left: 20px; }
+    li { margin: 7px 0; }
+    footer { color: var(--muted); font-size: 13px; margin-top: 24px; }
+    @media (max-width: 820px) {
+      .meta-grid, .context, .before-after { grid-template-columns: 1fr; }
+      header { padding-top: 34px; }
+      main { padding-left: 16px; padding-right: 16px; }
+    }
   </style>
 </head>
 <body>
-  <header><div class="wrap">
-    <h1>Arca Academy Changelog</h1>
-    <p>Major lesson changes from the base production tag to the latest publish plus the current unpublished editor draft.</p>
-    <div class="meta">
-      <div><strong>Base tag</strong><br><code>lesson/production/20260528-171110-d7e16eb</code></div>
-      <div><strong>Latest publish tag</strong><br><code>lesson/production/20260529-114758-3c87ee6</code></div>
-      <div><strong>Latest publish SHA</strong><br><code>3c87ee68b565696e857a3dbd368a6de8c8a9ab4b</code></div>
-      <div><strong>Editor draft overlay</strong><br><code>102</code> pending file changes overlaid. Editor <code>mainSha</code> matched latest publish.</div>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Arca Academy Release Notes</div>
+      <h1>Changelog since lesson/production/20260528-171110-d7e16eb</h1>
+      <p class="subtitle">Major lesson changes between the base production publish and the current published state. The editor draft was checked and overlaid; it currently has 0 unpublished pending changes.</p>
     </div>
-  </div></header>
-
-  <main><div class="wrap">
-    <section class="notice">
-      <p><strong>Method:</strong> pulled the base tag and the latest production tag, copied the latest tag to an "After + Draft" folder, overlaid the editor's <code>pendingChanges</code>, then diffed the base folder against the overlay. Renames were detected when a deleted file and an added file shared the same frontmatter <code>id</code>.</p>
+  </header>
+  <main class="wrap">
+    <section class="meta-grid" aria-label="Change summary">
+      <div class="stat"><strong>4</strong><span>major change groups</span></div>
+      <div class="stat"><strong>66</strong><span>added files</span></div>
+      <div class="stat"><strong>59</strong><span>renamed or moved files</span></div>
+      <div class="stat"><strong>8</strong><span>minor edits omitted</span></div>
     </section>
-
-    <section>
-      <h2>Changed File Set</h2>
-      <div class="grid">
-        <article class="card"><span class="stat">84</span><strong>Renamed or moved files</strong><br><span class="minor">Matched by frontmatter ID.</span></article>
-        <article class="card"><span class="stat">60</span><strong>Added files</strong><br><span class="minor">Mostly new folders/metadata plus one new lesson page.</span></article>
-        <article class="card"><span class="stat">38</span><strong>Deleted files</strong><br><span class="minor">Mostly old paths replaced by moved folders.</span></article>
-        <article class="card"><span class="stat">21</span><strong>Edited files</strong><br><span class="minor">Mostly order/title metadata plus the draft lesson placement.</span></article>
-      </div>
+    <section class="context">
+      <section><h3>Base</h3><p><code>lesson/production/20260528-171110-d7e16eb</code></p></section>
+      <section><h3>Current</h3><p><code>lesson/production/20260601-183043-9290b07</code><br><code>9290b07d</code> plus local editor draft overlay</p></section>
     </section>
-
-    <section class="week">
-      <h2>Week 1: Draft Day 1 Promoted Into the Live Week</h2>
-      <div class="week-body">
-        <span class="pill draft">Draft overlay</span><span class="pill move">Major move</span>
-        <div class="compare">
-          <div class="before"><span class="label">Before</span><p>Re-write Week 1 Day 1 lived under <code>re-write-week1/day-1</code> as draft/rewrite content. Live <code>week-1</code> still used the earlier Day 1 introduction structure.</p></div>
-          <div class="after"><span class="label">After + Draft</span><p>Re-write Day 1 content is now moved into live Week 1 as <code>week-1/day-1-rewrite1</code>, with modules for Important Notice, Setting Up Claude, Creating Your Landing Page, and Day 1 Consolidation.</p></div>
+    <section class="change-list">
+      
+      <article class="change-card is-added">
+        <div class="change-meta"><span>Added</span></div>
+        <h2>Course Ideas: new Codex course draft added</h2>
+        <div class="before-after">
+          <section><h3>Before</h3><p>No Codex course draft existed in the base publish snapshot.</p></section>
+          <section><h3>After</h3><p>Added a complete draft course under course-ideas/codex with 25 new files across foundations, app workflow, and Computer Use modules.</p></section>
         </div>
-        <div class="impact"><span class="label">Release note</span><p>Week 1 now gains a new live Day 1 rewrite path while the old Week 1 sections are pushed later in ordering. This is a major promotion of the rewritten Day 1 curriculum out of the rewrite area and into the active Week 1 course tree.</p></div>
-        <table><thead><tr><th>Change</th><th>Before</th><th>After + Draft</th></tr></thead><tbody>
-          <tr><td>Day 1 rewrite promoted</td><td><code>re-write-week1/day-1</code> held setup, landing-page, notice, and consolidation lessons.</td><td>The same lessons now live under <code>week-1/day-1-rewrite1</code>, preserving lesson IDs and adding new module metadata.</td></tr>
-          <tr><td>Week 1 order shifted</td><td><code>week-1</code> order was <code>1</code>; Day 2-5 orders were <code>2</code> through <code>5</code>.</td><td><code>week-1</code> order is now <code>2</code>, with Day 2-5 shifted to <code>3</code> through <code>6</code> so the inserted rewrite day can sit in the sequence.</td></tr>
-          <tr><td>Rewrite staging area cleaned up</td><td>Re-write Week 1 contained Day 1 through Day 5 rewrite folders.</td><td>Day 1 is removed from <code>re-write-week1</code>; remaining rewrite days are renamed to <code>day-2-rewrite1</code> through <code>day-5-rewrite1</code>.</td></tr>
-        </tbody></table>
-      </div>
-    </section>
-
-    <section class="week">
-      <h2>Week 1 Day 2: New Resume Lesson Added</h2>
-      <div class="week-body">
-        <span class="pill draft">New lesson</span>
-        <div class="compare">
-          <div class="before"><span class="label">Before</span><p>Day 2's welcome module did not include the resume/Markdown-file exercise.</p></div>
-          <div class="after"><span class="label">After + Draft</span><p>A new no-video, no-exercise page was added at <code>week-1/day-2-front-end-design/welcome-to-day-2/introduction-to-md-files.md</code>.</p></div>
+        <ul><li>Codex vs. Claude Code: What Transfers, What&#x27;s New</li><li>Exercise: Your First Run in the Codex App</li><li>Installing the Codex Windows App</li><li>Welcome &amp; What You&#x27;ll Build</li><li>Watch a Real Build in the App</li><li>Exercise: Drive a Real Task with Plan Mode</li><li>Plan Mode &amp; Approvals: Steering Without Babysitting</li><li>Exercise: Build a Skill, Then Schedule It</li><li>Skills, Plugins &amp; Automations</li><li>Exercise: Write a ThreadPup AGENTS.md</li><li>Steering Codex with AGENTS.md</li><li>The Codex App, End to End</li><li>Exercise: Competitor &amp; Sentiment Brief</li><li>Competitor &amp; Sentiment Intel</li><li>Exercise: First Computer Use Run (and the Claude Code Test)</li><li>Computer Use: The Thing Claude Code Can&#x27;t Do</li><li>Exercise: Reddit Trend-Miner for ThreadPup</li><li>Mining Walled Sites for Research</li></ul>
+      </article>
+      <article class="change-card is-moved">
+        <div class="change-meta"><span>Reordered</span></div>
+        <h2>Week 3 rewrite: lesson files reorganized into direct day folders</h2>
+        <div class="before-after">
+          <section><h3>Before</h3><p>Several Week 3 rewrite modules lived inside a nested day-1/day-* structure.</p></section>
+          <section><h3>After</h3><p>The same modules now sit directly under re-write-week-3/day-* folders, making the week structure easier to scan and publish.</p></section>
         </div>
-        <div class="impact"><span class="label">Release note</span><p>The new lesson teaches students to use a provided <code>.md</code> instructions file as a reusable recipe for upgrading resumes with Claude. It includes a sample messy resume and an ATS resume-upgrade instruction file as attachments, asks students to practice on the sample first, then apply the process to their own resume.</p></div>
-        <table><thead><tr><th>Content area</th><th>What changed</th></tr></thead><tbody>
-          <tr><td>New concept</td><td>Introduces <code>.md</code> files as plain-text instruction recipes students can give to Claude.</td></tr>
-          <tr><td>New activity</td><td>Students practice on a sample resume, compare before/after bullets, then run the same workflow on their real resume.</td></tr>
-          <tr><td>Output expectation</td><td>Students fill placeholders with real numbers, export a Word document, and post their best before/after bullet.</td></tr>
-        </tbody></table>
-      </div>
-    </section>
-
-    <section class="week">
-      <h2>Re-write Week 1: Remaining Days Renamed for Staging</h2>
-      <div class="week-body">
-        <span class="pill move">Major move</span>
-        <p>After Day 1 was promoted into the live Week 1 tree, the remaining rewrite days were moved into explicit rewrite-staging folders:</p>
-        <ul>
-          <li><code>re-write-week1/day-2</code> became <code>re-write-week1/day-2-rewrite1</code></li>
-          <li><code>re-write-week1/day-3</code> became <code>re-write-week1/day-3-rewrite1</code></li>
-          <li><code>re-write-week1/day-4</code> became <code>re-write-week1/day-4-rewrite1</code></li>
-          <li><code>re-write-week1/day-5</code> became <code>re-write-week1/day-5-rewrite1</code></li>
-        </ul>
-        <p class="minor">The lesson IDs were preserved, so this is treated as a folder move rather than new lesson content.</p>
-      </div>
-    </section>
-
-    <section class="week">
-      <h2>Week 3 Rewrite: Nested Content Split Into Day Folders</h2>
-      <div class="week-body">
-        <span class="pill move">Published restructure</span>
-        <div class="compare">
-          <div class="before"><span class="label">Before</span><p>Re-write Week 3 content lived under <code>re-write-week-3/day-1/</code>, with nested folders named <code>day-1</code> through <code>day-5</code>.</p></div>
-          <div class="after"><span class="label">After + Draft</span><p>Week 3 is split into top-level <code>day-1</code> through <code>day-5</code> folders with clearer module groups.</p></div>
+        <ul><li>Concepts: re-write-week-3/day-1/day-1/concepts.md -&gt; re-write-week-3/day-1/open-claw-introduction/concepts.md</li><li>Playwright Advanced Testing on Your Project: re-write-week-3/day-1/day-5/playwright-advanced-testing-on-your-project.md -&gt; re-write-week-3/day-5/advanced-playwright-testing-and-ai-agent-workflows/playwright-advanced-testing-on-your-project.md</li><li>Hands-On Exercises: re-write-week-3/day-1/day-1/hands-on-exercises.md -&gt; re-write-week-3/day-1/mission-control-and-sub-agents/hands-on-exercises.md</li><li>Assemble a LinkedIn Carousel from ThreadPup Diagrams: re-write-week-3/day-1/day-3/assemble-a-linkedin-carousel-from-threadpup-diagrams.md -&gt; re-write-week-3/day-3/visual-systems-and-customer-journey-design/assemble-a-linkedin-carousel-from-threadpup-diagrams.md</li><li>Native Excalidraw Diagrams from a Prompt: re-write-week-3/day-1/day-3/native-excalidraw-diagrams-from-a-prompt.md -&gt; re-write-week-3/day-3/ai-visual-systems-and-prompt-based-diagrams/native-excalidraw-diagrams-from-a-prompt.md</li><li>Download and Excerpt Video (Agent Solves with Bash + Filesystem): re-write-week-3/day-1/day-2/download-and-excerpt-video-agent-solves-with-bash-filesystem.md -&gt; re-write-week-3/day-2/file-based-multi-agent-systems-and-autonomous-workflows/download-and-excerpt-video-agent-solves-with-bash-filesystem.md</li><li>Apify, Firecrawl and Scraping Introduction: re-write-week-3/day-1/day-4/apify-firecrawl-and-scraping-introduction.md -&gt; re-write-week-3/day-4/web-scraping-and-data-pipeline-foundations/apify-firecrawl-and-scraping-introduction.md</li><li>Heartbeat and Cron Part 2 (Inbox + Context): re-write-week-3/day-1/day-2/heartbeat-and-cron-part-2-inbox-context.md -&gt; re-write-week-3/day-2/building-persistent-ai-agent-workflows-with-scheduling-and-context/heartbeat-and-cron-part-2-inbox-context.md</li><li>Personality and Memory Deep Dive: re-write-week-3/day-1/day-2/personality-and-memory-deep-dive.md -&gt; re-write-week-3/day-2/personality-memory-and-real-world-ai-workflow-systems/personality-and-memory-deep-dive.md</li><li>Intro to Mission Control: re-write-week-3/day-1/day-1/intro-to-mission-control.md -&gt; re-write-week-3/day-1/mission-control-and-sub-agents/intro-to-mission-control.md</li></ul>
+      </article>
+      <article class="change-card is-moved">
+        <div class="change-meta"><span>Reordered</span></div>
+        <h2>Week 4 rewrite: sales and SEO modules promoted into direct day folders</h2>
+        <div class="before-after">
+          <section><h3>Before</h3><p>Week 4 rewrite content was nested under re-write-week-4/day-1/day-* folders.</p></section>
+          <section><h3>After</h3><p>The modules were moved to direct day folders for the Week 4 rewrite sequence, preserving content while clarifying the week layout.</p></section>
         </div>
-        <div class="impact"><span class="label">Release note</span><p>Week 3 now reads as a true five-day arc: OpenClaw foundations, persistent agent workflows, visual systems, research/data pipelines, and Playwright/AI-agent testing.</p></div>
-      </div>
-    </section>
-
-    <section class="week">
-      <h2>Week 4 Rewrite: Sales/SEO Bundle Split Into a Course Arc</h2>
-      <div class="week-body">
-        <span class="pill move">Published restructure</span>
-        <div class="compare">
-          <div class="before"><span class="label">Before</span><p>Re-write Week 4 content lived under <code>re-write-week-4/day-1/</code>, with nested Day 1-5 folders.</p></div>
-          <div class="after"><span class="label">After + Draft</span><p>Week 4 is split into top-level Day 1-5 folders covering connected AI work, sales, plugins, WordPress/SEO, and security.</p></div>
+        <ul><li>Cold Email System with Apollo + Cowork: re-write-week-4/day-1/day-2/cold-email-system-with-apollo-cowork.md -&gt; re-write-week-4/day-2/day-2/cold-email-system-with-apollo-cowork.md</li><li>Building Your Own Plugin: re-write-week-4/day-1/day-3/building-your-own-plugin.md -&gt; re-write-week-4/day-3/day-3/building-your-own-plugin.md</li><li>Intro to Claude Cowork: re-write-week-4/day-1/day-1/intro-to-claude-cowork.md -&gt; re-write-week-4/day-1/collaborative-ai-workflows-and-delegation-systems/intro-to-claude-cowork.md</li><li>Vibe Coding Security &amp; Survival: re-write-week-4/day-1/day-5/vibe-coding-security-and-survival.md -&gt; re-write-week-4/day-5/day-5/vibe-coding-security-and-survival.md</li><li>Featured Images with Kie AI (Day 4 Capstone): re-write-week-4/day-1/day-4/featured-images-with-kie-ai-day-4-capstone.md -&gt; re-write-week-4/day-4/day-4/featured-images-with-kie-ai-day-4-capstone.md</li><li>The Claude Code Plugin Ecosystem: re-write-week-4/day-1/day-3/the-claude-code-plugin-ecosystem.md -&gt; re-write-week-4/day-3/claude-code-plugin-ecosystem-and-extension-stack/the-claude-code-plugin-ecosystem.md</li><li>How WordPress MCP Works: re-write-week-4/day-1/day-4/how-wordpress-mcp-works.md -&gt; re-write-week-4/day-4/seo-in-the-ai-era-and-wordpress-mcp-integration/how-wordpress-mcp-works.md</li><li>Advanced: MCP Servers, Hooks &amp; Subagents: re-write-week-4/day-1/day-3/advanced-mcp-servers-hooks-and-subagents.md -&gt; re-write-week-4/day-3/day-3/advanced-mcp-servers-hooks-and-subagents.md</li><li>Package &amp; Publish Your Plugin to GitHub: re-write-week-4/day-1/day-3/package-and-publish-your-plugin-to-github.md -&gt; re-write-week-4/day-3/day-3/package-and-publish-your-plugin-to-github.md</li><li>Advanced MCP Powers with NovaMira: re-write-week-4/day-1/day-4/advanced-mcp-powers-with-novamira.md -&gt; re-write-week-4/day-4/ai-powered-wordpress-development-with-mcp-and-claude-code/advanced-mcp-powers-with-novamira.md</li></ul>
+      </article>
+      <article class="change-card is-edited">
+        <div class="change-meta"><span>Edited</span></div>
+        <h2>Significant lesson edits</h2>
+        <div class="before-after">
+          <section><h3>Before</h3><p>These files existed in the base publish snapshot.</p></section>
+          <section><h3>After</h3><p>The current version contains substantial body or structure changes beyond small wording fixes.</p></section>
         </div>
-        <div class="impact"><span class="label">Release note</span><p>Week 4 now has a cleaner learner journey: cowork and connectors, sales deliverables and compliant outreach, plugin creation, WordPress/SEO implementation, and vibe-coding security.</p></div>
-      </div>
+        <ul><li>Meta (re-write-week-2/meta.yml)</li><li>Meta (re-write-week-3/day-1/meta.yml)</li><li>Meta (re-write-week-3/meta.yml)</li><li>Meta (re-write-week-4/day-1/day-1/meta.yml)</li><li>Meta (re-write-week-4/day-1/meta.yml)</li><li>Meta (re-write-week-4/meta.yml)</li><li>Meta (re-write-week1/meta.yml)</li><li>Meta (week-1/meta.yml)</li><li>Meta (week-2/meta.yml)</li></ul>
+      </article>
     </section>
-
-    <section class="week">
-      <h2>Course Ordering Adjustments</h2>
-      <div class="week-body">
-        <span class="pill">Navigation</span>
-        <p>Several course-level <code>order</code> values changed to make room for the Week 1 promotion and the Week 3 rename/order adjustment.</p>
-        <table><thead><tr><th>Course</th><th>Before</th><th>After + Draft</th></tr></thead><tbody>
-          <tr><td>Week 0</td><td>Order <code>0</code></td><td>Order <code>1</code></td></tr>
-          <tr><td>Week 1</td><td>Order <code>1</code></td><td>Order <code>2</code></td></tr>
-          <tr><td>Re-write Week 3</td><td>Title <code>Re-write Week 3</code>, order <code>8</code></td><td>Title <code>Week 3</code>, order <code>4</code></td></tr>
-          <tr><td>Re-write Week 1/2/4 and template</td><td>Earlier staging order values</td><td>Shifted later by one slot.</td></tr>
-        </tbody></table>
-      </div>
-    </section>
-
-    <section class="week">
+    <section class="note" style="margin-top:16px;">
       <h2>Minor Changes Omitted</h2>
-      <div class="week-body"><p class="minor">This changelog omits small metadata-only title/order tweaks inside unchanged lesson bodies, transcript JSON path changes that only follow folder moves, and formatting-level changes. The focus is on structural course movement, added or promoted lessons, and meaningful learner-facing changes.</p></div>
+      <p>Small wording, formatting, metadata, or structural housekeeping changes are intentionally left out so this changelog stays useful as release notes.</p>
     </section>
-  </div></main>
+    <footer>Generated locally from pulled lesson snapshots on June 02, 2026 at 02:46.</footer>
+  </main>
 </body>
 </html>
