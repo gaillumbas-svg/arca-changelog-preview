@@ -3,170 +3,67 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Arca Academy Changelog - lesson/production/20260528-171110-d7e16eb</title>
+  <title>Arca Academy Changelog - lesson/production/20260602-153443-adf4985</title>
   <style>
-    :root {
-      color-scheme: light;
-      --ink: #18202a;
-      --muted: #586574;
-      --line: #d8dee6;
-      --paper: #f6f7f9;
-      --panel: #ffffff;
-      --blue: #1f6feb;
-      --green: #1f7a4d;
-      --amber: #a15c07;
-      --red: #a33434;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: var(--paper);
-      line-height: 1.55;
-    }
-    header {
-      background: #102033;
-      color: #fff;
-      padding: 44px 24px 34px;
-    }
-    .wrap { max-width: 1120px; margin: 0 auto; }
-    .eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: 12px; font-weight: 700; opacity: .78; }
-    h1 { margin: 10px 0 10px; font-size: clamp(30px, 4vw, 48px); line-height: 1.08; letter-spacing: 0; }
-    .subtitle { max-width: 820px; margin: 0; color: #d8e2ef; font-size: 17px; }
-    main { padding: 28px 24px 56px; }
-    .meta-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      margin: -18px auto 28px;
-    }
-    .stat {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 15px 16px;
-      min-height: 92px;
-      box-shadow: 0 4px 16px rgba(16, 32, 51, .06);
-    }
-    .stat strong { display: block; font-size: 28px; line-height: 1; margin-bottom: 8px; }
-    .stat span { color: var(--muted); font-size: 13px; }
-    .context {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-    .context section, .note {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 18px;
-    }
-    h2 { margin: 0 0 12px; font-size: 23px; line-height: 1.2; letter-spacing: 0; }
-    h3 { margin: 0 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
-    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .94em; background: #eef1f5; padding: 2px 5px; border-radius: 4px; }
-    .change-list { display: grid; gap: 16px; }
-    .change-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-left: 6px solid var(--blue);
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 4px 16px rgba(16, 32, 51, .05);
-    }
-    .change-card.is-added { border-left-color: var(--green); }
-    .change-card.is-moved { border-left-color: var(--amber); }
-    .change-card.is-edited { border-left-color: var(--blue); }
-    .change-meta { margin-bottom: 10px; }
-    .change-meta span {
-      display: inline-block;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 4px 9px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      background: #f9fafb;
-    }
-    .before-after { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
-    .before-after section { border: 1px solid var(--line); border-radius: 8px; padding: 14px; background: #fbfcfe; }
-    p { margin: 0; }
-    ul { margin: 14px 0 0; padding-left: 20px; }
-    li { margin: 7px 0; }
-    footer { color: var(--muted); font-size: 13px; margin-top: 24px; }
-    @media (max-width: 820px) {
-      .meta-grid, .context, .before-after { grid-template-columns: 1fr; }
-      header { padding-top: 34px; }
-      main { padding-left: 16px; padding-right: 16px; }
-    }
+    :root { --ink:#18202a; --muted:#596574; --line:#d9dee7; --paper:#f6f7f9; --panel:#fff; --green:#1f7a4d; --amber:#a15c07; --blue:#1f6feb; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:var(--paper); line-height:1.55; }
+    header { background:#102033; color:#fff; padding:44px 24px 34px; }
+    .wrap { max-width:1120px; margin:0 auto; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.08em; font-size:12px; font-weight:700; opacity:.78; }
+    h1 { margin:10px 0 10px; font-size:clamp(30px,4vw,48px); line-height:1.08; letter-spacing:0; }
+    .subtitle { max-width:840px; margin:0; color:#d8e2ef; font-size:17px; }
+    main { padding:28px 24px 56px; }
+    .meta-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:-18px auto 28px; }
+    .stat { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:15px 16px; min-height:92px; box-shadow:0 4px 16px rgba(16,32,51,.06); }
+    .stat strong { display:block; font-size:28px; line-height:1; margin-bottom:8px; }
+    .stat span { color:var(--muted); font-size:13px; }
+    .context { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-bottom:24px; }
+    .context section,.note { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:18px; }
+    h2 { margin:0 0 12px; font-size:23px; line-height:1.2; letter-spacing:0; }
+    h3 { margin:0 0 6px; font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.94em; background:#eef1f5; padding:2px 5px; border-radius:4px; }
+    .change-list { display:grid; gap:16px; }
+    .change-card { background:var(--panel); border:1px solid var(--line); border-left:6px solid var(--blue); border-radius:8px; padding:20px; box-shadow:0 4px 16px rgba(16,32,51,.05); }
+    .change-card.is-added { border-left-color:var(--green); } .change-card.is-moved { border-left-color:var(--amber); } .change-card.is-edited { border-left-color:var(--blue); }
+    .change-meta { margin-bottom:10px; } .change-meta span { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:4px 9px; color:var(--muted); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; background:#f9fafb; }
+    .before-after { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:14px; }
+    .before-after section { border:1px solid var(--line); border-radius:8px; padding:14px; background:#fbfcfe; }
+    p { margin:0; } ul { margin:14px 0 0; padding-left:20px; } li { margin:7px 0; } footer { color:var(--muted); font-size:13px; margin-top:24px; }
+    @media (max-width:820px) { .meta-grid,.context,.before-after { grid-template-columns:1fr; } header { padding-top:34px; } main { padding-left:16px; padding-right:16px; } }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <div class="eyebrow">Arca Academy Release Notes</div>
-      <h1>Changelog since lesson/production/20260528-171110-d7e16eb</h1>
-      <p class="subtitle">Major lesson changes between the base production publish and the current published state. The editor draft was checked and overlaid; it currently has 0 unpublished pending changes.</p>
-    </div>
-  </header>
+  <header><div class="wrap"><div class="eyebrow">Arca Academy Release Notes</div><h1>Changelog since lesson/production/20260602-153443-adf4985</h1><p class="subtitle">Major lesson changes between the selected production publish and the latest published commit, with your current unpublished editor draft overlaid on top.</p></div></header>
   <main class="wrap">
     <section class="meta-grid" aria-label="Change summary">
-      <div class="stat"><strong>4</strong><span>major change groups</span></div>
-      <div class="stat"><strong>66</strong><span>added files</span></div>
-      <div class="stat"><strong>59</strong><span>renamed or moved files</span></div>
-      <div class="stat"><strong>8</strong><span>minor edits omitted</span></div>
+      <div class="stat"><strong>2</strong><span>major change groups</span></div>
+      <div class="stat"><strong>8</strong><span>draft changes overlaid</span></div>
+      <div class="stat"><strong>4</strong><span>added files</span></div>
+      <div class="stat"><strong>2</strong><span>minor edits omitted</span></div>
     </section>
-    <section class="context">
-      <section><h3>Base</h3><p><code>lesson/production/20260528-171110-d7e16eb</code></p></section>
-      <section><h3>Current</h3><p><code>lesson/production/20260601-183043-9290b07</code><br><code>9290b07d</code> plus local editor draft overlay</p></section>
-    </section>
+    <section class="context"><section><h3>Base</h3><p><code>lesson/production/20260602-153443-adf4985</code></p></section><section><h3>Current</h3><p><code>lesson/production/20260602-153601-ed7c179</code><br><code>ed7c1795</code> plus local editor draft overlay</p></section></section>
     <section class="change-list">
-      
       <article class="change-card is-added">
         <div class="change-meta"><span>Added</span></div>
-        <h2>Course Ideas: new Codex course draft added</h2>
+        <h2>Week 1: resume upgrade module added to All About You</h2>
         <div class="before-after">
-          <section><h3>Before</h3><p>No Codex course draft existed in the base publish snapshot.</p></section>
-          <section><h3>After</h3><p>Added a complete draft course under course-ideas/codex with 25 new files across foundations, app workflow, and Computer Use modules.</p></section>
+          <section><h3>Before</h3><p>The base version did not include this resume-upgrade lesson inside Week 1 Day 1.</p></section>
+          <section><h3>After</h3><p>The draft adds a resume-upgrade lesson and exercise under Week 1 Day 1, giving learners a practical artifact-focused activity early in the course.</p></section>
         </div>
-        <ul><li>Codex vs. Claude Code: What Transfers, What&#x27;s New</li><li>Exercise: Your First Run in the Codex App</li><li>Installing the Codex Windows App</li><li>Welcome &amp; What You&#x27;ll Build</li><li>Watch a Real Build in the App</li><li>Exercise: Drive a Real Task with Plan Mode</li><li>Plan Mode &amp; Approvals: Steering Without Babysitting</li><li>Exercise: Build a Skill, Then Schedule It</li><li>Skills, Plugins &amp; Automations</li><li>Exercise: Write a ThreadPup AGENTS.md</li><li>Steering Codex with AGENTS.md</li><li>The Codex App, End to End</li><li>Exercise: Competitor &amp; Sentiment Brief</li><li>Competitor &amp; Sentiment Intel</li><li>Exercise: First Computer Use Run (and the Claude Code Test)</li><li>Computer Use: The Thing Claude Code Can&#x27;t Do</li><li>Exercise: Reddit Trend-Miner for ThreadPup</li><li>Mining Walled Sites for Research</li></ul>
+        <ul><li>Meta (week-1/day-1-introduction/all-about-you/meta.yml)</li><li>Exercise: Resume Upgrade (week-1/day-1-introduction/all-about-you/resume-upgrade.exercise.md)</li><li>Resume Upgrade (week-1/day-1-introduction/all-about-you/resume-upgrade.md)</li></ul>
       </article>
       <article class="change-card is-moved">
-        <div class="change-meta"><span>Reordered</span></div>
-        <h2>Week 3 rewrite: lesson files reorganized into direct day folders</h2>
+        <div class="change-meta"><span>Moved</span></div>
+        <h2>Visual Code / Atelier content moved from Course Ideas into Week 2 Day 4</h2>
         <div class="before-after">
-          <section><h3>Before</h3><p>Several Week 3 rewrite modules lived inside a nested day-1/day-* structure.</p></section>
-          <section><h3>After</h3><p>The same modules now sit directly under re-write-week-3/day-* folders, making the week structure easier to scan and publish.</p></section>
+          <section><h3>Before</h3><p>The Atelier lesson lived as draft material under Course Ideas &gt; Visual Code with Claude.</p></section>
+          <section><h3>After</h3><p>The draft promotes the lesson into the live Week 2 Day 4 motion-graphics sequence and adds Raven instruction metadata, making it part of the course flow instead of a standalone idea.</p></section>
         </div>
-        <ul><li>Concepts: re-write-week-3/day-1/day-1/concepts.md -&gt; re-write-week-3/day-1/open-claw-introduction/concepts.md</li><li>Playwright Advanced Testing on Your Project: re-write-week-3/day-1/day-5/playwright-advanced-testing-on-your-project.md -&gt; re-write-week-3/day-5/advanced-playwright-testing-and-ai-agent-workflows/playwright-advanced-testing-on-your-project.md</li><li>Hands-On Exercises: re-write-week-3/day-1/day-1/hands-on-exercises.md -&gt; re-write-week-3/day-1/mission-control-and-sub-agents/hands-on-exercises.md</li><li>Assemble a LinkedIn Carousel from ThreadPup Diagrams: re-write-week-3/day-1/day-3/assemble-a-linkedin-carousel-from-threadpup-diagrams.md -&gt; re-write-week-3/day-3/visual-systems-and-customer-journey-design/assemble-a-linkedin-carousel-from-threadpup-diagrams.md</li><li>Native Excalidraw Diagrams from a Prompt: re-write-week-3/day-1/day-3/native-excalidraw-diagrams-from-a-prompt.md -&gt; re-write-week-3/day-3/ai-visual-systems-and-prompt-based-diagrams/native-excalidraw-diagrams-from-a-prompt.md</li><li>Download and Excerpt Video (Agent Solves with Bash + Filesystem): re-write-week-3/day-1/day-2/download-and-excerpt-video-agent-solves-with-bash-filesystem.md -&gt; re-write-week-3/day-2/file-based-multi-agent-systems-and-autonomous-workflows/download-and-excerpt-video-agent-solves-with-bash-filesystem.md</li><li>Apify, Firecrawl and Scraping Introduction: re-write-week-3/day-1/day-4/apify-firecrawl-and-scraping-introduction.md -&gt; re-write-week-3/day-4/web-scraping-and-data-pipeline-foundations/apify-firecrawl-and-scraping-introduction.md</li><li>Heartbeat and Cron Part 2 (Inbox + Context): re-write-week-3/day-1/day-2/heartbeat-and-cron-part-2-inbox-context.md -&gt; re-write-week-3/day-2/building-persistent-ai-agent-workflows-with-scheduling-and-context/heartbeat-and-cron-part-2-inbox-context.md</li><li>Personality and Memory Deep Dive: re-write-week-3/day-1/day-2/personality-and-memory-deep-dive.md -&gt; re-write-week-3/day-2/personality-memory-and-real-world-ai-workflow-systems/personality-and-memory-deep-dive.md</li><li>Intro to Mission Control: re-write-week-3/day-1/day-1/intro-to-mission-control.md -&gt; re-write-week-3/day-1/mission-control-and-sub-agents/intro-to-mission-control.md</li></ul>
-      </article>
-      <article class="change-card is-moved">
-        <div class="change-meta"><span>Reordered</span></div>
-        <h2>Week 4 rewrite: sales and SEO modules promoted into direct day folders</h2>
-        <div class="before-after">
-          <section><h3>Before</h3><p>Week 4 rewrite content was nested under re-write-week-4/day-1/day-* folders.</p></section>
-          <section><h3>After</h3><p>The modules were moved to direct day folders for the Week 4 rewrite sequence, preserving content while clarifying the week layout.</p></section>
-        </div>
-        <ul><li>Cold Email System with Apollo + Cowork: re-write-week-4/day-1/day-2/cold-email-system-with-apollo-cowork.md -&gt; re-write-week-4/day-2/day-2/cold-email-system-with-apollo-cowork.md</li><li>Building Your Own Plugin: re-write-week-4/day-1/day-3/building-your-own-plugin.md -&gt; re-write-week-4/day-3/day-3/building-your-own-plugin.md</li><li>Intro to Claude Cowork: re-write-week-4/day-1/day-1/intro-to-claude-cowork.md -&gt; re-write-week-4/day-1/collaborative-ai-workflows-and-delegation-systems/intro-to-claude-cowork.md</li><li>Vibe Coding Security &amp; Survival: re-write-week-4/day-1/day-5/vibe-coding-security-and-survival.md -&gt; re-write-week-4/day-5/day-5/vibe-coding-security-and-survival.md</li><li>Featured Images with Kie AI (Day 4 Capstone): re-write-week-4/day-1/day-4/featured-images-with-kie-ai-day-4-capstone.md -&gt; re-write-week-4/day-4/day-4/featured-images-with-kie-ai-day-4-capstone.md</li><li>The Claude Code Plugin Ecosystem: re-write-week-4/day-1/day-3/the-claude-code-plugin-ecosystem.md -&gt; re-write-week-4/day-3/claude-code-plugin-ecosystem-and-extension-stack/the-claude-code-plugin-ecosystem.md</li><li>How WordPress MCP Works: re-write-week-4/day-1/day-4/how-wordpress-mcp-works.md -&gt; re-write-week-4/day-4/seo-in-the-ai-era-and-wordpress-mcp-integration/how-wordpress-mcp-works.md</li><li>Advanced: MCP Servers, Hooks &amp; Subagents: re-write-week-4/day-1/day-3/advanced-mcp-servers-hooks-and-subagents.md -&gt; re-write-week-4/day-3/day-3/advanced-mcp-servers-hooks-and-subagents.md</li><li>Package &amp; Publish Your Plugin to GitHub: re-write-week-4/day-1/day-3/package-and-publish-your-plugin-to-github.md -&gt; re-write-week-4/day-3/day-3/package-and-publish-your-plugin-to-github.md</li><li>Advanced MCP Powers with NovaMira: re-write-week-4/day-1/day-4/advanced-mcp-powers-with-novamira.md -&gt; re-write-week-4/day-4/ai-powered-wordpress-development-with-mcp-and-claude-code/advanced-mcp-powers-with-novamira.md</li></ul>
-      </article>
-      <article class="change-card is-edited">
-        <div class="change-meta"><span>Edited</span></div>
-        <h2>Significant lesson edits</h2>
-        <div class="before-after">
-          <section><h3>Before</h3><p>These files existed in the base publish snapshot.</p></section>
-          <section><h3>After</h3><p>The current version contains substantial body or structure changes beyond small wording fixes.</p></section>
-        </div>
-        <ul><li>Meta (re-write-week-2/meta.yml)</li><li>Meta (re-write-week-3/day-1/meta.yml)</li><li>Meta (re-write-week-3/meta.yml)</li><li>Meta (re-write-week-4/day-1/day-1/meta.yml)</li><li>Meta (re-write-week-4/day-1/meta.yml)</li><li>Meta (re-write-week-4/meta.yml)</li><li>Meta (re-write-week1/meta.yml)</li><li>Meta (week-1/meta.yml)</li><li>Meta (week-2/meta.yml)</li></ul>
-      </article>
-    </section>
-    <section class="note" style="margin-top:16px;">
-      <h2>Minor Changes Omitted</h2>
-      <p>Small wording, formatting, metadata, or structural housekeeping changes are intentionally left out so this changelog stays useful as release notes.</p>
-    </section>
-    <footer>Generated locally from pulled lesson snapshots on June 02, 2026 at 02:46.</footer>
+        <ul><li>Atelier: course-ideas/visual-code-with-claude/module-1/atelier.md -&gt; week-2/day-4-motion-graphics-with-claude-code-and-remotion/module-1/atelier.md</li><li>Added or edited: week-2/day-4-motion-graphics-with-claude-code-and-remotion/module-1/meta.yml</li><li>Added or edited: week-2/day-4-motion-graphics-with-claude-code-and-remotion/raven-instructions/meta.yml</li><li>Removed old Course Ideas copy: course-ideas/visual-code-with-claude/module-1/meta.yml</li></ul>
+      </article></section>
+    <section class="note" style="margin-top:16px;"><h2>Minor Changes Omitted</h2><p>Small wording, formatting, metadata, and housekeeping changes are intentionally left out so this stays readable as release notes.</p></section>
+    <footer>Generated locally from pulled lesson snapshots and browser editor draft on June 03, 2026 at 03:00.</footer>
   </main>
 </body>
 </html>
